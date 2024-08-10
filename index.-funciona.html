@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <p id="acum">-</p>
+  <input type="button" title="button" id="btnSuma" value="+" />
+  <input type="button" title="button" id="btnResta" value="-" />
+
+  <script>
+
+    const btnSuma = document.getElementById('btnSuma');
+    const btnResta = document.getElementById('btnResta');
+
+    let acumulador = 0;
+
+    const acum = document.getElementById('acum');
+
+    acum.innerHTML = acumulador;
+
+
+    function contar(evt) {
+
+      if (evt === 'suma') {
+        acumulador++;
+      } else {
+        acumulador--;
+      }
+
+      acum.innerHTML = acumulador;
+
+    }
+
+    // button.addEventListener('click', contar)
+
+    btnSuma.onclick = () => contar("suma");
+    btnResta.onclick = () => contar("resta");
+
+  </script>
+</body>
+
+</html>
